@@ -1,6 +1,8 @@
 import { Poppins } from "next/font/google";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import LogoClouds from "./components/LogoClouds";
+import { StickyScrollRevealDemo } from "./components/StickyScroll/sticky-scroll-reveal-demo";
 import "./globals.css";
 
 const popins = Poppins({
@@ -24,6 +26,12 @@ export default function RootLayout({ children }) {
             <Header />
             <Hero />
           </header>
+          <div className="LogoClouds">
+            <LogoClouds />
+          </div>
+          <div className="StickyScroll">
+            <StickyScrollRevealDemo />
+          </div>
         </div>
         {children}
       </body>
