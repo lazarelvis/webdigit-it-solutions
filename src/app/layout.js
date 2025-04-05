@@ -3,6 +3,8 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import LogoClouds from "./components/LogoClouds";
 import { StickyScrollRevealDemo } from "./components/StickyScroll/sticky-scroll-reveal-demo";
+import Portfolio from "./components/Portoflio";
+
 import "./globals.css";
 
 const popins = Poppins({
@@ -31,6 +33,9 @@ export default function RootLayout({ children }) {
           </div>
           <div className="StickyScroll">
             <StickyScrollRevealDemo />
+          </div>
+          <div className="Portfolio">
+            <Portfolio />
           </div>
         </div>
         {children}
