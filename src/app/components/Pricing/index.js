@@ -19,7 +19,7 @@ const tiers = [
     name: "Standard",
     id: "tier-enterprise",
     href: "#",
-    priceMonthly: "500 RON",
+    priceMonthly: "499 RON",
     description: "Dedicated support and infrastructure for your company.",
     features: [
       "Design responsive",
