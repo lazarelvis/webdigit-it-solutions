@@ -6,6 +6,7 @@ import { StickyScrollRevealDemo } from "./components/StickyScroll/sticky-scroll-
 import Portfolio from "./components/Portoflio";
 import Pricing from "./components/Pricing";
 import Stats from "./components/Stats";
+import Support from "./components/Support";
 import "./globals.css";
 
 const popins = Poppins({
@@ -43,6 +44,9 @@ export default function RootLayout({ children }) {
           </div>
           <div className="Stats">
             <Stats />
+          </div>
+          <div className="Support">
+            <Support />
           </div>
         </div>
         {children}
