@@ -10,9 +10,9 @@ export default function PortfolioCard() {
       description2:
         "Aplicatia a fost realizata folosind libraria React, Unity, Nodejs, Javascript si MongoDB pentru stocarea datelor.",
       imageSource1: "/gaming-website.png",
-      imageSource2: "/gaming-website.png",
+      imageSource2: "/gaming-website-games.png",
       alt: "Website Gaming",
-      linkPreview: "https://algochurn.com",
+      linkPreview: "https://mandegaming.netlify.app/",
     },
     {
       title: "Shop de chitari",
@@ -31,9 +31,9 @@ export default function PortfolioCard() {
         "O aplicatie de prezentare a portofoliului, experientei si proiectului la care o persoana a lucrat.",
       description2: "Pentru realizare s-a folosit framework-ul Next.js",
       imageSource1: "/portfolio-website.png",
-      imageSource2: "/portfolio-website.png",
+      imageSource2: "/portfolio-website-2.png",
       alt: "portfolio website",
-      linkPreview: "https://algochurn.com",
+      linkPreview: "https://lazarelvis.ro/",
     },
   ];
 
@@ -54,7 +54,7 @@ export default function PortfolioCard() {
             <div className="mt-4 h-px w-6 bg-slate-300"></div>
             <div className="mt-6">
               <a
-                href="https://algochurn.com"
+                href={item.linkPreview}
                 target="__blank"
                 className="inline-flex justify-center rounded-lg text-sm font-semibold py-3 px-4 bg-slate-900 text-white hover:bg-slate-700"
               >
@@ -63,7 +63,7 @@ export default function PortfolioCard() {
             </div>
           </div>
           <div className="flex flex-col sm:flex-row mt-10 lg:mt-0 space-y-6 sm:space-y-0 sm:space-x-6 overflow-x-auto flex-1">
-            <div className="relative w-full h-52 sm:h-72 lg:h-[90%]  sm:w-[50%] lg:w-[45%] rounded-xl border border-gray-100">
+            <div className="relative w-full h-50 sm:h-72 lg:h-[90%]  sm:w-[50%] lg:w-[45%] rounded-xl border border-gray-100">
               <Image
                 className={styles.imgstyle}
                 src={item.imageSource1}
@@ -73,8 +73,8 @@ export default function PortfolioCard() {
                 priority
               />
             </div>
-
-            <div className="relative w-full h-52 sm:h-72 lg:h-[90%]  sm:w-[50%] lg:w-[45%] rounded-xl border border-gray-100">
+            {/* h-50 is the hight of the card */}
+            <div className="relative w-full h-50 sm:h-72 lg:h-[90%]  sm:w-[50%] lg:w-[45%] rounded-xl border border-gray-100">
               <Image
                 className={styles.imgstyle}
                 src={item.imageSource2}
