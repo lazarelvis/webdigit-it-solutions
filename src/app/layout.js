@@ -4,7 +4,7 @@ import Hero from "./components/Hero";
 import LogoClouds from "./components/LogoClouds";
 import { StickyScrollRevealDemo } from "./components/StickyScroll/sticky-scroll-reveal-demo";
 import Portfolio from "./components/Portoflio";
-
+import Pricing from "./components/Pricing";
 import "./globals.css";
 
 const popins = Poppins({
@@ -36,6 +36,9 @@ export default function RootLayout({ children }) {
           </div>
           <div className="Portfolio">
             <Portfolio />
+          </div>
+          <div className="Pricing">
+            <Pricing />
           </div>
         </div>
         {children}
