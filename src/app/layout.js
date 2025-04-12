@@ -2,7 +2,7 @@ import { Poppins } from "next/font/google";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import LogoClouds from "./components/LogoClouds";
-import { StickyScrollRevealDemo } from "./components/StickyScroll/sticky-scroll-reveal-demo";
+import FeaturesSection from "./components/StickyScroll/sticky-scroll-reveal-demo";
 import Portfolio from "./components/Portoflio";
 import Pricing from "./components/Pricing";
 import Stats from "./components/Stats";
@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
             <LogoClouds />
           </div>
           <div className="StickyScroll">
-            <StickyScrollRevealDemo />
+            <FeaturesSection />
           </div>
           <div className="Portfolio">
             <Portfolio />
