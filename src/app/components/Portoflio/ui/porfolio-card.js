@@ -6,7 +6,7 @@ export default function PortfolioCard() {
     {
       title: "Gaming Website",
       description1:
-        "Un website in care poti sa te joci multiple jocuri realizate in Unity si ai posibilitea sa intri in competitie cu alti jucatori si sa ia propiul scor intr-un leaderboard.",
+        "Un website in care poti sa te joci multiple jocuri realizate in Unity si ai posibilitea sa intri in competitie cu alti jucatori.",
       description2:
         "Aplicatia a fost realizata folosind libraria React, Unity, Nodejs, Javascript si MongoDB pentru stocarea datelor.",
       imageSource1: "/gaming-website.png",
@@ -15,15 +15,15 @@ export default function PortfolioCard() {
       linkPreview: "https://mandegaming.netlify.app/",
     },
     {
-      title: "Shop de chitari",
+      title: "Restaurant",
       description1:
-        "O aplicatie web de prezentare care iti da posibilitatea sa vezi produse, sa le adaugi in cos si sa le comanzi, de altfel pentru administrator sa adauge sau a stearga produse.",
+        "Restaurant website de prezentare cu meniu cu diferite functionalitati",
       description2:
         "S-a folosit aplicatia ReactJS, Javascript, NodeJS si MongoDB.",
-      imageSource1: "/guitar-shop.png",
-      imageSource2: "/guitar-shop.png",
+      imageSource1: "/grilli-restaurant.png",
+      imageSource2: "/grilli-restaurant-menu.png",
       alt: "Shop de chitari",
-      linkPreview: "https://algochurn.com",
+      linkPreview: "https://grili-restaurant.netlify.app/",
     },
     {
       title: "Site prezentare / Portfoliu",
@@ -58,12 +58,12 @@ export default function PortfolioCard() {
                 target="__blank"
                 className="inline-flex justify-center rounded-lg text-sm font-semibold py-3 px-4 bg-slate-900 text-white hover:bg-slate-700"
               >
-                Live Preview
+                Vezi proiect
               </a>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row mt-10 lg:mt-0 space-y-6 sm:space-y-0 sm:space-x-6 overflow-x-auto flex-1">
-            <div className="relative w-full h-50 sm:h-72 lg:h-[90%]  sm:w-[50%] lg:w-[45%] rounded-xl border border-gray-100">
+            <div className="relative w-full h-50 sm:h-72 lg:h-[80%]  sm:w-[50%] lg:w-[45%] rounded-xl border border-gray-100">
               <Image
                 className={styles.imgstyle}
                 src={item.imageSource1}
@@ -74,7 +74,7 @@ export default function PortfolioCard() {
               />
             </div>
             {/* h-50 is the hight of the card */}
-            <div className="relative w-full h-50 sm:h-72 lg:h-[90%]  sm:w-[50%] lg:w-[45%] rounded-xl border border-gray-100">
+            <div className="relative w-full h-50 sm:h-72 lg:h-[80%]  sm:w-[50%] lg:w-[45%] rounded-xl border border-gray-100 ">
               <Image
                 className={styles.imgstyle}
                 src={item.imageSource2}

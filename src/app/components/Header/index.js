@@ -18,7 +18,7 @@ export default function Header() {
     <nav className=" bg-opacity-0 fixed w-full font-semibold">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <div className="p-4">
-          <p className={styles.logo}>Webdigit</p>
+          <p className={`${styles.logo} sm:text-2xl`}>Webdigit</p>
         </div>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
