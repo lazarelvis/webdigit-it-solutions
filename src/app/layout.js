@@ -1,12 +1,5 @@
 import { Poppins } from "next/font/google";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import LogoClouds from "./components/LogoClouds";
-import FeaturesSection from "./components/StickyScroll/sticky-scroll-reveal-demo";
-import Portfolio from "./components/Portoflio";
-import Pricing from "./components/Pricing";
-import Stats from "./components/Stats";
-import Support from "./components/Support";
 import Footer from "./components/Footer";
 import "./globals.css";
 
@@ -29,31 +22,12 @@ export default function RootLayout({ children }) {
         >
           <header className="NavbarAndHero">
             <Header />
-            <Hero />
           </header>
-          <div className="LogoClouds">
-            <LogoClouds />
-          </div>
-          <div className="StickyScroll">
-            <FeaturesSection />
-          </div>
-          <div className="Portfolio">
-            <Portfolio />
-          </div>
-          <div className="Pricing">
-            <Pricing />
-          </div>
-          <div className="Stats">
-            <Stats />
-          </div>
-          <div className="Support">
-            <Support />
-          </div>
-          <div className="Footer">
-            <Footer />
-          </div>
         </div>
-        {children}
+        <main>{children}</main>
+        <div className="Footer">
+          <Footer />
+        </div>
       </body>
     </html>
   );
