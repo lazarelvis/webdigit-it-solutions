@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function LogoClouds() {
   return (
     // bg white removed
-    <div className="py-18 sm:py-32">
+    <div className="py-18 sm:py-22">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h2 className="text-center text-lg/8 font-semibold text-gray-900 sm:text-xl">
           Tehnologii web si librarii folosite pentru crearea aplicatiilor

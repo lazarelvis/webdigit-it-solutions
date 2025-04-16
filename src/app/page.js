@@ -5,7 +5,7 @@ import Portfolio from "./components/Portoflio";
 import Pricing from "./components/Pricing";
 import Stats from "./components/Stats";
 import Support from "./components/Support";
-
+import Backgroundgradient from "./components/Background-gradient";
 import { Poppins } from "next/font/google";
 const popins = Poppins({
   subsets: ["latin"],
@@ -17,14 +17,15 @@ export default function Background() {
     <div
       className={`whole-body-content webdigit ${popins.className} font-semibold`}
     >
-      <div className="background--custom gradient">
-        {/* <!-- aici ajustes cand-e sus sau jos sa se duca gradient-ul --> */}
+      {/* <div className="background--custom gradient">
+        <!-- aici ajustes cand-e sus sau jos sa se duca gradient-ul -->
         <canvas id="canvas" className="h-9/20 sm:h-3/5" />
       </div>
       <script src="https://cdn.jsdelivr.net/gh/greentfrapp/pocoloco@minigl/minigl.js"></script>
       <script>
         var gradient = new Gradient(); gradient.initGradient("#canvas");
-      </script>
+      </script> */}
+      <Backgroundgradient />
       <Hero />
       <div className="LogoClouds">
         <LogoClouds />

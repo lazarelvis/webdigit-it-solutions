@@ -2,7 +2,7 @@ import styles from "./hero.module.css";
 
 export default function Hero() {
   return (
-    <section className="HomepageHero pt-22 px-4 flex">
+    <section className="HomepageHero pt-16 px-4 flex">
       <div className="hero px-4 mx-auto max-w-2xl">
         <div className="Homepage-webdigit">
           <h1 className="herotext text-4xl leading-12  tracking-normal   font-black sm:text-5xl sm:leading-20 md:text-7xl">
