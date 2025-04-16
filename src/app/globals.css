@@ -22,7 +22,7 @@
 :after,
 :before {
   background-repeat: no-repeat;
-  box-sizing: inherit;
+  /* box-sizing: inherit; */
 }
 
 user agent stylesheet body {

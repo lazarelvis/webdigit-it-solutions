@@ -2,6 +2,7 @@ import { Poppins } from "next/font/google";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./globals.css";
+import Navbar from "./components/Navbar/resizable-navbar-demo";
 
 const popins = Poppins({
   subsets: ["latin"],
@@ -21,7 +22,8 @@ export default function RootLayout({ children }) {
           className={`whole-body-content webdigit ${popins.className} font-semibold`}
         >
           <header className="NavbarAndHero">
-            <Header />
+            {/* <Header /> */}
+            <Navbar />
           </header>
         </div>
         <main>{children}</main>
