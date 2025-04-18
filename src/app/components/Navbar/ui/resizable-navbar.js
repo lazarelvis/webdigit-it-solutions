@@ -206,7 +206,7 @@ export const NavbarLogo = ({ variant = "text-white" }) => {
   return (
     <Link
       href="#"
-      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-lg font-normal text-black"
+      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-lg font-normal"
     >
       {/* <Image
         src="https://assets.aceternity.com/logo-dark.png"
