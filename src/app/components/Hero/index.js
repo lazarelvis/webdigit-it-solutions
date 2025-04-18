@@ -1,4 +1,5 @@
 import styles from "./hero.module.css";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -50,7 +51,24 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      {/* <div className="element dreapta w-xl h-50 bg-blue-200 max-md:hidden"></div> */}
+
+      <div
+        className={`element dreapta ${styles.heroSection} w-4xl h-140 max-md:hidden p-8`}
+      >
+        <div className="flex">
+          <div className="rounded-full h-4 w-4 rounded-full bg-red-400 mx-1"></div>
+          <div className="rounded-full h-4 w-4 rounded-full bg-yellow-400 mx-1"></div>
+          <div className="rounded-full h-4 w-4 rounded-full bg-green-400 mx-1"></div>
+        </div>
+
+        <Image
+          style={{ transform: "translate(-100px, -80px)" }}
+          src="/Group 19.svg"
+          alt="Picture of the author"
+          width={900}
+          height={900}
+        />
+      </div>
     </section>
   );
 }

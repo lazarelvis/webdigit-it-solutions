@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
             <Navbar />
           </header>
         </div>
-        <main>{children}</main>
+        <main className={`${popins.className}`}>{children}</main>
         <div className="Footer">
           <Footer />
         </div>

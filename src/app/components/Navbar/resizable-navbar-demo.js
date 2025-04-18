@@ -11,6 +11,7 @@ import {
   MobileNavMenu,
 } from "./ui/resizable-navbar";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function NavbarDemo() {
   const navItems = [
@@ -29,16 +30,20 @@ export default function NavbarDemo() {
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isnothomepage = pathname != "/";
 
   return (
     <div className="relative w-full">
       <Navbar>
         {/* Desktop Navigation */}
         <NavBody>
-          <NavbarLogo />
+          <NavbarLogo variant={isnothomepage ? `dark` : `primary`} />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary">Logare</NavbarButton>
+            <NavbarButton variant={isnothomepage ? `dark` : `secondary`}>
+              Logare
+            </NavbarButton>
             <NavbarButton variant="primary">Cere oferta</NavbarButton>
           </div>
         </NavBody>
@@ -46,8 +51,9 @@ export default function NavbarDemo() {
         {/* Mobile Navigation */}
         <MobileNav>
           <MobileNavHeader>
-            <NavbarLogo />
+            <NavbarLogo variant={isnothomepage ? `dark` : `primary`} />
             <MobileNavToggle
+              variant={isnothomepage ? `dark` : `primary`}
               isOpen={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             />

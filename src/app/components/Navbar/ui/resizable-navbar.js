@@ -10,6 +10,8 @@ import {
 import Link from "next/link";
 import React, { useRef, useState } from "react";
 import Image from "next/image";
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export const Navbar = ({ children, className }) => {
   const ref = useRef(null);
@@ -74,7 +76,8 @@ export const NavBody = ({ children, className, visible }) => {
 
 export const NavItems = ({ items, className, onItemClick }) => {
   const [hovered, setHovered] = useState(null);
-
+  const pathname = usePathname();
+  const isContactPage = pathname === "/contact";
   return (
     <motion.div
       onMouseLeave={() => setHovered(null)}
@@ -84,10 +87,13 @@ export const NavItems = ({ items, className, onItemClick }) => {
       )}
     >
       {items.map((item, idx) => (
+        // aici este culoarea pentru meniu
         <Link
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
-          className="relative px-4 py-2 text-neutral-600 dark:text-white"
+          className={`relative px-4 py-2 text-neutral-600 ${
+            isContactPage ? "dark:text-[#0a2540]" : "dark:text-white"
+          }`}
           key={`link-${idx}`}
           href={item.link}
         >
@@ -97,7 +103,10 @@ export const NavItems = ({ items, className, onItemClick }) => {
               className="absolute inset-0 h-full w-full rounded-full"
             />
           )}
-          <span className="relative z-20">{item.name}</span>
+          <span className="relative z-20">
+            {item.name}
+            {onItemClick}
+          </span>
         </Link>
       ))}
     </motion.div>
@@ -167,15 +176,33 @@ export const MobileNavMenu = ({ children, className, isOpen, onClose }) => {
   );
 };
 
-export const MobileNavToggle = ({ isOpen, onClick }) => {
+export const MobileNavToggle = ({
+  isOpen,
+  onClick,
+  variant = "text-[#0a2540]",
+}) => {
+  const variantStyles = {
+    primary: "text-white",
+    dark: "text-[#0a2540]",
+  };
   return isOpen ? (
-    <IconX className="text-black dark:text-white" onClick={onClick} />
+    <IconX
+      className={`text-black dark:${variantStyles[variant]}`}
+      onClick={onClick}
+    />
   ) : (
-    <IconMenu2 className="text-black dark:text-white" onClick={onClick} />
+    <IconMenu2
+      className={`text-black dark:${variantStyles[variant]}`}
+      onClick={onClick}
+    />
   );
 };
 
-export const NavbarLogo = () => {
+export const NavbarLogo = ({ variant = "text-white" }) => {
+  const variantStyles = {
+    primary: "text-white",
+    dark: "text-[#0a2540]",
+  };
   return (
     <Link
       href="#"
@@ -187,7 +214,9 @@ export const NavbarLogo = () => {
         width={30}
         height={30}
       /> */}
-      <span className="font-medium text-black dark:text-white sm:text-2xl  font-semibold">
+      <span
+        className={`font-medium  dark:${variantStyles[variant]} sm:text-2xl  font-semibold`}
+      >
         Webdigit
       </span>
     </Link>
