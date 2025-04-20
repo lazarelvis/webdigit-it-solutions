@@ -36,7 +36,7 @@ const items = [
 export default function Footer() {
   return (
     <div className="w-full bg-[#0a2540] text-red-500 py-y ">
-      <div className="flex flex-col max-w-[1240px] px-2 py-4 mx-auto justify-between sm:flex-row text-center text-[#00d4ff]">
+      <div className="flex flex-col max-w-[1240px] px-2 py-4 mx-auto justify-between sm:flex-row text-center text-[#f6f9fc]">
         <p className="py-4">
           &#169; 2025 Webdigit. Toate drespturile rezervate
         </p>

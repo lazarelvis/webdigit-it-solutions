@@ -63,7 +63,7 @@ export default function Hero() {
 
         <Image
           style={{ transform: "translate(-100px, -80px)" }}
-          src="/Group 19.svg"
+          src="/webdigit.svg"
           alt="Picture of the author"
           width={900}
           height={900}

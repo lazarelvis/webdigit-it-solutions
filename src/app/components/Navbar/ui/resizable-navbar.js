@@ -74,10 +74,13 @@ export const NavBody = ({ children, className, visible }) => {
   );
 };
 
-export const NavItems = ({ items, className, onItemClick }) => {
+export const NavItems = ({ items, className, onItemClick, variant }) => {
+  const variantStyles = {
+    primary: "text-white",
+    dark: "text-[#0a2540]",
+  };
+
   const [hovered, setHovered] = useState(null);
-  const pathname = usePathname();
-  const isContactPage = pathname === "/contact";
   return (
     <motion.div
       onMouseLeave={() => setHovered(null)}
@@ -91,9 +94,7 @@ export const NavItems = ({ items, className, onItemClick }) => {
         <Link
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
-          className={`relative px-4 py-2 text-neutral-600 ${
-            isContactPage ? "dark:text-[#0a2540]" : "dark:text-white"
-          }`}
+          className={`relative px-4 py-2 text-neutral-600 ${variantStyles[variant]}`}
           key={`link-${idx}`}
           href={item.link}
         >
@@ -205,7 +206,7 @@ export const NavbarLogo = ({ variant = "text-white" }) => {
   };
   return (
     <Link
-      href="#"
+      href="/"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-lg font-normal"
     >
       {/* <Image

@@ -21,7 +21,7 @@ export default function NavbarDemo() {
     },
     {
       name: "Despre Noi",
-      link: "#desprenoi",
+      link: "/desprenoi",
     },
     {
       name: "Contact",
@@ -39,12 +39,17 @@ export default function NavbarDemo() {
         {/* Desktop Navigation */}
         <NavBody>
           <NavbarLogo variant={isnothomepage ? `dark` : `primary`} />
-          <NavItems items={navItems} />
+          <NavItems
+            items={navItems}
+            variant={isnothomepage ? `dark` : `primary`}
+          />
           <div className="flex items-center gap-4">
             <NavbarButton variant={isnothomepage ? `dark` : `secondary`}>
               Logare
             </NavbarButton>
-            <NavbarButton variant="primary">Cere oferta</NavbarButton>
+            <NavbarButton href="/contact" variant="primary">
+              Cere oferta
+            </NavbarButton>
           </div>
         </NavBody>
 
