@@ -44,7 +44,10 @@ export default function NavbarDemo() {
             variant={isnothomepage ? `dark` : `primary`}
           />
           <div className="flex items-center gap-4">
-            <NavbarButton variant={isnothomepage ? `dark` : `secondary`}>
+            <NavbarButton
+              href="/logare"
+              variant={isnothomepage ? `dark` : `secondary`}
+            >
               Logare
             </NavbarButton>
             <NavbarButton href="/contact" variant="primary">

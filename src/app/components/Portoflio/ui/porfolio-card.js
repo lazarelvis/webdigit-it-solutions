@@ -51,7 +51,7 @@ export default function PortfolioCard() {
                 {item.description2}
               </p>
             </div>
-            <div className="mt-4 h-px w-6 bg-[#00d4ff]"></div>
+            <div className="mt-4 h-px w-6 bg-indigo-600"></div>
             <div className="mt-6">
               <a
                 href={item.linkPreview}

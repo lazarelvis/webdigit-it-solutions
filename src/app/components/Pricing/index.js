@@ -55,7 +55,7 @@ export default function Pricing() {
         />
       </div>
       <div className="mx-auto max-w-4xl text-center">
-        <h2 className="text-base/7 font-semibold text-[#00d4ff]">
+        <h2 className="text-base/7 font-semibold text-indigo-600">
           Prețuri site prezentare
         </h2>
         <p className="mt-2 text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl">
@@ -85,7 +85,7 @@ export default function Pricing() {
             <h3
               id={tier.id}
               className={classNames(
-                tier.featured ? "text-[#00d4ff]" : "text-[#00d4ff]",
+                tier.featured ? "text-indigo-600" : "text-indigo-600",
                 "text-base/7 font-semibold"
               )}
             >
@@ -155,8 +155,8 @@ export default function Pricing() {
               aria-describedby={tier.id}
               className={classNames(
                 tier.featured
-                  ? "bg-[#00d4ff] text-[#0a2540] shadow-xs hover:bg-indigo-400 focus-visible:outline-indigo-500"
-                  : "text-[#0a2540] ring-1 ring-[#00d4ff] ring-inset hover:ring-indigo-300 focus-visible:outline-indigo-600",
+                  ? "bg-indigo-600 text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-indigo-500"
+                  : "text-indigo-600 ring-1 ring-indigo-600 ring-inset hover:ring-indigo-300 focus-visible:outline-indigo-600",
                 "mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10"
               )}
             >
