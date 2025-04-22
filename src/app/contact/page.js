@@ -2,9 +2,35 @@
 
 import { useState } from "react";
 import { Field, Label, Switch } from "@headlessui/react";
-
+import { sendContactForm } from "../Lib/api";
+const initValues = {
+  firstname: "",
+  lastname: "",
+  email: "",
+  telefon: "",
+  message: "",
+};
+const initState = { values: initValues };
 export default function Contact() {
   const [agreed, setAgreed] = useState(false);
+  const [state, setState] = useState(initState);
+  const { values } = state;
+
+  const handleChange = ({ target }) =>
+    setState((prev) => ({
+      ...prev,
+      values: {
+        ...prev.values,
+        [target.name]: target.value,
+      },
+    }));
+
+  const onSubmit = async () => {
+    setState((prev) => ({
+      ...prev,
+    }));
+    await sendContactForm(values);
+  };
 
   return (
     <div className="isolate bg-white px-6 py-16 sm:py-20 lg:px-8">
@@ -21,7 +47,7 @@ export default function Contact() {
         />
       </div>
 
-      <div className="flex flex-col  mx-auto  max-w-7xl justify-center md:flex-row">
+      <div className="flex flex-col  mx-auto  max-w-7xl justify-center md:flex-row md:pb-30">
         <div className="element-stanga max-w-xl h-auto md:p-8">
           <div className="mx-auto max-w-2xl text-center pb-5">
             <h2 className="text-4xl text-left font-semibold tracking-tight text-balance text-gray-900 sm:text-3xl">
@@ -108,8 +134,10 @@ export default function Contact() {
               </label>
               <div className="mt-2.5">
                 <input
-                  id="first-name"
-                  name="first-name"
+                  id="firstname"
+                  name="firstname"
+                  value={values.firstname}
+                  onChange={handleChange}
                   type="text"
                   autoComplete="given-name"
                   className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
@@ -125,15 +153,17 @@ export default function Contact() {
               </label>
               <div className="mt-2.5">
                 <input
-                  id="last-name"
-                  name="last-name"
+                  id="lastname"
+                  name="lastname"
+                  value={values.lastname}
+                  onChange={handleChange}
                   type="text"
                   autoComplete="family-name"
                   className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                 />
               </div>
             </div>
-            <div className="sm:col-span-2">
+            {/* <div className="sm:col-span-2">
               <label
                 htmlFor="company"
                 className="block text-sm/6 font-semibold text-gray-900"
@@ -149,7 +179,7 @@ export default function Contact() {
                   className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                 />
               </div>
-            </div>
+            </div> */}
             <div className="sm:col-span-2">
               <label
                 htmlFor="email"
@@ -161,6 +191,8 @@ export default function Contact() {
                 <input
                   id="email"
                   name="email"
+                  value={values.email}
+                  onChange={handleChange}
                   type="email"
                   autoComplete="email"
                   className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
@@ -177,8 +209,10 @@ export default function Contact() {
               <div className="mt-2.5">
                 <div className="flex rounded-md bg-white outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">
                   <input
-                    id="phone-number"
-                    name="phone-number"
+                    id="telefon"
+                    name="telefon"
+                    value={values.telefon}
+                    onChange={handleChange}
                     type="text"
                     placeholder="(+40) 12345678"
                     className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
@@ -197,6 +231,8 @@ export default function Contact() {
                 <textarea
                   id="message"
                   name="message"
+                  value={values.message}
+                  onChange={handleChange}
                   rows={4}
                   className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                   defaultValue={""}
@@ -230,6 +266,7 @@ export default function Contact() {
             <button
               type="submit"
               className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              onClick={onSubmit}
             >
               Trimite
             </button>
