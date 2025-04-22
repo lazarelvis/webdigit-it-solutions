@@ -26,10 +26,14 @@ export default function Contact() {
     }));
 
   const onSubmit = async () => {
-    setState((prev) => ({
-      ...prev,
-    }));
-    await sendContactForm(values);
+    try {
+      await sendContactForm(values);
+    } catch (error) {
+      setState((prev) => ({
+        ...prev,
+        error: error.message,
+      }));
+    }
   };
 
   return (
