@@ -8,7 +8,6 @@ import { IconBrandGithub, IconBrandGoogle } from "@tabler/icons-react";
 export default function SignupFormDemo() {
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted");
   };
   return (
     <div className="py-20 h-screen">

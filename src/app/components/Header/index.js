@@ -11,7 +11,6 @@ function myFunction() {
   } else {
     x.style.display = "block";
   }
-  console.log("this is clicked");
 }
 
 export default function Header() {

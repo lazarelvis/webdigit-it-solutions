@@ -36,8 +36,8 @@ export async function GET() {
 export async function POST(req) {
   const data = await req.json();
   const { firstname, lastname, email, telefon, message } = data;
-  console.log("!!json data", data);
-  if (!firstname || !lastname || !email || !telefon || !message) {
+
+  if (!firstname || !lastname || !email) {
     return NextResponse.json({ error: "Missing fields" }, { status: 400 });
   }
 
@@ -49,7 +49,6 @@ export async function POST(req) {
     });
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.log("Email error:", error);
     return NextResponse.json({ message: error.message }, { status: 400 });
   }
   // return NextResponse.json({ error: "Bad request" }, { status: 400 });

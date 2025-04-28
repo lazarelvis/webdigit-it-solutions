@@ -3,6 +3,9 @@
 import { useState } from "react";
 import { Field, Label, Switch } from "@headlessui/react";
 import { sendContactForm } from "../Lib/api";
+import { ToastContainer, toast } from "react-toastify";
+import { useForm } from "react-hook-form";
+
 const initValues = {
   firstname: "",
   lastname: "",
@@ -12,6 +15,13 @@ const initValues = {
 };
 const initState = { values: initValues };
 export default function Contact() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm();
+
   const [agreed, setAgreed] = useState(false);
   const [state, setState] = useState(initState);
   const { values } = state;
@@ -24,15 +34,24 @@ export default function Contact() {
         [target.name]: target.value,
       },
     }));
+  console.log("!agreed:", agreed);
 
-  const onSubmit = async () => {
-    try {
-      await sendContactForm(values);
-    } catch (error) {
-      setState((prev) => ({
-        ...prev,
-        error: error.message,
-      }));
+  const onSubmit = async (data) => {
+    if (agreed) {
+      try {
+        await sendContactForm(data);
+        toast.success("Mesaj trimis");
+        setAgreed(false);
+      } catch (error) {
+        setState((prev) => ({
+          ...prev,
+          error: error.message,
+        }));
+        toast.error("Eroare la trimiterea mesajului");
+      }
+      reset();
+    } else {
+      alert("Please agree to the terms and policy.");
     }
   };
 
@@ -124,7 +143,7 @@ export default function Contact() {
           </dl>
         </div>
         <form
-          action="#"
+          onSubmit={handleSubmit(onSubmit)}
           method="POST"
           className="mt-16 max-w-xl2 sm:mt-5 md:px-10"
         >
@@ -138,14 +157,18 @@ export default function Contact() {
               </label>
               <div className="mt-2.5">
                 <input
+                  {...register("firstname", {
+                    required: "Numele este necesar",
+                  })}
                   id="firstname"
-                  name="firstname"
-                  value={values.firstname}
-                  onChange={handleChange}
                   type="text"
+                  q
                   autoComplete="given-name"
                   className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                 />
+                {errors.firstname && (
+                  <p className="text-red-600 text-sm">{`${errors.firstname.message}`}</p>
+                )}
               </div>
             </div>
             <div>
@@ -158,13 +181,16 @@ export default function Contact() {
               <div className="mt-2.5">
                 <input
                   id="lastname"
-                  name="lastname"
-                  value={values.lastname}
-                  onChange={handleChange}
+                  {...register("lastname", {
+                    required: "Prenumele este necesar",
+                  })}
                   type="text"
                   autoComplete="family-name"
                   className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                 />
+                {errors.lastname && (
+                  <p className="text-red-600 text-sm">{`${errors.lastname.message}`}</p>
+                )}
               </div>
             </div>
             {/* <div className="sm:col-span-2">
@@ -194,13 +220,16 @@ export default function Contact() {
               <div className="mt-2.5">
                 <input
                   id="email"
-                  name="email"
-                  value={values.email}
-                  onChange={handleChange}
+                  {...register("email", {
+                    required: "Emailul este necesar",
+                  })}
                   type="email"
                   autoComplete="email"
                   className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                 />
+                {errors.email && (
+                  <p className="text-red-600 text-sm">{`${errors.email.message}`}</p>
+                )}
               </div>
             </div>
             <div className="sm:col-span-2">
@@ -208,15 +237,14 @@ export default function Contact() {
                 htmlFor="phone-number"
                 className="block text-sm/6 font-semibold text-gray-900"
               >
-                Telefon
+                Telefon{" "}
+                <span className="text-gray-400 text-xs">(optional)</span>
               </label>
               <div className="mt-2.5">
                 <div className="flex rounded-md bg-white outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">
                   <input
                     id="telefon"
-                    name="telefon"
-                    value={values.telefon}
-                    onChange={handleChange}
+                    {...register("telefon")}
                     type="text"
                     placeholder="(+40) 12345678"
                     className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
@@ -229,14 +257,12 @@ export default function Contact() {
                 htmlFor="message"
                 className="block text-sm/6 font-semibold text-gray-900"
               >
-                Mesaj
+                Mesaj <span className="text-gray-400 text-xs">(optional)</span>
               </label>
               <div className="mt-2.5">
                 <textarea
                   id="message"
-                  name="message"
-                  value={values.message}
-                  onChange={handleChange}
+                  {...register("message")}
                   rows={4}
                   className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
                   defaultValue={""}
@@ -246,6 +272,9 @@ export default function Contact() {
             <Field className="flex gap-x-4 sm:col-span-2">
               <div className="flex h-6 items-center">
                 <Switch
+                  {...register("agreed", {
+                    required: "",
+                  })}
                   checked={agreed}
                   onChange={setAgreed}
                   className="group flex w-8 flex-none cursor-pointer rounded-full bg-gray-200 p-px ring-1 ring-gray-900/5 transition-colors duration-200 ease-in-out ring-inset focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 data-checked:bg-indigo-600"
@@ -268,12 +297,13 @@ export default function Contact() {
           </div>
           <div className="mt-10">
             <button
+              disabled={isSubmitting}
               type="submit"
               className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              onClick={onSubmit}
             >
               Trimite
             </button>
+            <ToastContainer position="bottom-right" theme="colored" />
           </div>
         </form>
       </div>
