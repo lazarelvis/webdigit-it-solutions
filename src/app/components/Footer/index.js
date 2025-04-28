@@ -6,6 +6,7 @@ import {
   FaTwitch,
   FaTiktok,
 } from "react-icons/fa";
+import Link from "next/link";
 
 const sections = [
   {
@@ -27,10 +28,17 @@ const sections = [
 ];
 
 const items = [
-  { name: "Facebook", icon: FaFacebook, link: "https://www.facebook.com/" },
-  { name: "Instagram", icon: FaInstagram, link: "https://www.instagram.com/" },
-  { name: "Tiktok", icon: FaTiktok, link: "https://tiktok.com/" },
-  { name: "Github", icon: FaGithub, link: "https://github.com/" },
+  {
+    name: "Instagram",
+    icon: FaInstagram,
+    link: "https://www.instagram.com/webdigit.ro/",
+  },
+  {
+    name: "Tiktok",
+    icon: FaTiktok,
+    link: "https://www.tiktok.com/@webdigit.ro",
+  },
+  { name: "Github", icon: FaGithub, link: "https://github.com/lazarelvis" },
 ];
 
 export default function Footer() {
@@ -42,7 +50,11 @@ export default function Footer() {
         </p>
         <div className="flex justify-between sm:w-[300px] pt-4 text-2xl">
           {items.map((x, index) => {
-            return <x.icon key={index} className="hover:text-white" />;
+            return (
+              <Link key={index} href={x.link}>
+                <x.icon className="hover:text-white" />
+              </Link>
+            );
           })}
         </div>
       </div>
