@@ -51,7 +51,7 @@ export default function Contact() {
       }
       reset();
     } else {
-      alert("Please agree to the terms and policy.");
+      alert("Vă rugăm să fiți de acord cu termenii și politica.");
     }
   };
 
