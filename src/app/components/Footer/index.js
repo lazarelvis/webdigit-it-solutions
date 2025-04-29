@@ -45,9 +45,7 @@ export default function Footer() {
   return (
     <div className="w-full bg-[#0a2540] text-red-500 py-y ">
       <div className="flex flex-col max-w-[1240px] px-2 py-4 mx-auto justify-between sm:flex-row text-center text-[#f6f9fc]">
-        <p className="py-4">
-          &#169; 2025 Webdigit. Toate drespturile rezervate
-        </p>
+        <p className="py-4">Toate drepturile rezervate &#169; 2025 Webdigit</p>
         <div className="flex justify-between sm:w-[200px] pt-4 text-2xl">
           {items.map((x, index) => {
             return (

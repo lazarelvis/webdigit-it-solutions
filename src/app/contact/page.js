@@ -5,6 +5,7 @@ import { Field, Label, Switch } from "@headlessui/react";
 import { sendContactForm } from "../Lib/api";
 import { ToastContainer, toast } from "react-toastify";
 import { useForm } from "react-hook-form";
+import Link from "next/link";
 
 const initValues = {
   firstname: "",
@@ -288,9 +289,12 @@ export default function Contact() {
               </div>
               <Label className="text-sm/6 text-gray-600">
                 Selectând aceasta, sunteți de acord cu{" "}
-                <a href="#" className="font-semibold text-indigo-600">
-                  termenii si&nbsp;conditiile
-                </a>
+                <Link
+                  href="/termeni-si-conditii"
+                  className="font-semibold text-indigo-600"
+                >
+                  termenii și&nbsp;condițiile
+                </Link>
                 .
               </Label>
             </Field>
