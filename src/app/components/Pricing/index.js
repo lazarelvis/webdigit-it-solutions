@@ -4,7 +4,7 @@ const tiers = [
   {
     name: "Pachet de pornire",
     id: "tier-hobby",
-    href: "#",
+    href: "/contact",
     priceMonthly: "Gratis",
     description:
       "Oferim o consultanta gratuita pentru fiecare proiect in parte.",
@@ -18,7 +18,7 @@ const tiers = [
   {
     name: "Standard",
     id: "tier-enterprise",
-    href: "#",
+    href: "/contact",
     priceMonthly: "499 RON",
     description: "Dedicated support and infrastructure for your company.",
     features: [

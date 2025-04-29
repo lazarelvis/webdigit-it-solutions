@@ -48,7 +48,7 @@ export default function Footer() {
         <p className="py-4">
           &#169; 2025 Webdigit. Toate drespturile rezervate
         </p>
-        <div className="flex justify-between sm:w-[300px] pt-4 text-2xl">
+        <div className="flex justify-between sm:w-[200px] pt-4 text-2xl">
           {items.map((x, index) => {
             return (
               <Link key={index} href={x.link}>

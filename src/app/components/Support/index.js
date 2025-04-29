@@ -1,4 +1,28 @@
+"use client";
+
+import { ToastContainer, toast } from "react-toastify";
+import { useForm } from "react-hook-form";
+import { sendContactForm } from "@/app/Lib/api";
+
 export default function Support() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    try {
+      await sendContactForm(data);
+      toast.info("In cel mai scurt timp vei fi contact");
+    } catch (error) {
+      console.log("error.message:", error.message);
+
+      toast.error("Eroare la trimiterea mesajului");
+    }
+    reset();
+  };
   return (
     <div className="relative isolate overflow-hidden bg-[#f6f9fc] py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -11,26 +35,36 @@ export default function Support() {
               Intr-o discutie rapida iti poti afla cele mai bune decizii pentru
               prezenta ta online
             </p>
-            <div className="mt-6 flex max-w-md gap-x-4">
-              <label htmlFor="email-address" className="sr-only">
-                Email address
-              </label>
-              <input
-                id="email-address"
-                name="email"
-                type="email"
-                required
-                placeholder="Adresa email"
-                autoComplete="email"
-                className="min-w-0 flex-auto rounded-md bg-[#0a2540]/5 px-3.5 py-2 text-base text-[#0a2540] outline-1 -outline-offset-1 outline-[#0a2540]/50 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
-              />
-              <button
-                type="submit"
-                className="flex-none rounded-md bg-[#0a2540] px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-              >
-                Contact
-              </button>
-            </div>
+            <form onSubmit={handleSubmit(onSubmit)} method="POST">
+              <div className="mt-6 flex max-w-md gap-x-4">
+                <label htmlFor="email-address" className="sr-only">
+                  Email address
+                </label>
+                <input
+                  {...register("email", {
+                    required: "Emailul este necesar",
+                  })}
+                  id="email-address"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="Adresa email"
+                  autoComplete="email"
+                  className="min-w-0 flex-auto rounded-md bg-[#0a2540]/5 px-3.5 py-2 text-base text-[#0a2540] outline-1 -outline-offset-1 outline-[#0a2540]/50 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
+                />
+                {errors.email && (
+                  <p className="text-red-600 text-sm">{`${errors.email.message}`}</p>
+                )}
+                <button
+                  disabled={isSubmitting}
+                  type="submit"
+                  className="flex-none rounded-md bg-[#0a2540] px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                >
+                  Contact
+                </button>
+              </div>
+            </form>
+            <ToastContainer position="bottom-right" theme="light" />
           </div>
           <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
             <div className="flex flex-col items-start">
