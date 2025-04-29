@@ -288,12 +288,12 @@ export default function Contact() {
                 </Switch>
               </div>
               <Label className="text-sm/6 text-gray-600">
-                Selectând aceasta, sunteți de acord cu{" "}
+                Sunt de acord cu prelucrarea datelor in conformitate cu{" "}
                 <Link
-                  href="/termeni-si-conditii"
+                  href="/politica-de-confidentialitate"
                   className="font-semibold text-indigo-600"
                 >
-                  termenii și&nbsp;condițiile
+                  politica de&nbsp; confidențialitate
                 </Link>
                 .
               </Label>
