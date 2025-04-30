@@ -4,7 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { sendContactForm } from "@/app/Lib/api";
 
-export default function Support() {
+export default function Support({ ref }) {
   const {
     register,
     handleSubmit,
@@ -24,7 +24,10 @@ export default function Support() {
     reset();
   };
   return (
-    <div className="relative isolate overflow-hidden bg-[#f6f9fc] py-16 sm:py-24 lg:py-32">
+    <div
+      ref={ref}
+      className="relative isolate overflow-hidden bg-[#f6f9fc] py-16 sm:py-24 lg:py-32"
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
           <div className="max-w-xl lg:max-w-lg">
@@ -58,7 +61,7 @@ export default function Support() {
                 <button
                   disabled={isSubmitting}
                   type="submit"
-                  className="flex-none rounded-md bg-[#0a2540] px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                  className="flex-none rounded-md bg-[#0a2540] px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 cursor-pointer"
                 >
                   Contact
                 </button>

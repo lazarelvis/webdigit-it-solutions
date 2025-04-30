@@ -1,7 +1,8 @@
 import styles from "./hero.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Hero() {
+export default function Hero({ onClick }) {
   return (
     <section className="HomepageHero pt-16 px-4 flex">
       <div className="hero px-4 mx-auto max-w-2xl">
@@ -17,7 +18,10 @@ export default function Hero() {
             performantă, ca tu să te concentrezi pe ceea ce faci cel mai bine.
           </p>
           <div className="heroButtons flex py-6 sm:py-10">
-            <button className="flex bg-[#0a2540] hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded-full">
+            <button
+              onClick={onClick}
+              className="flex bg-[#0a2540] hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded-full cursor-pointer"
+            >
               Primește o ofertă
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +37,10 @@ export default function Hero() {
               </svg>
             </button>
 
-            <button className="flex bg-white hover:bg-blue-700 text-[#0a2540] text-sm font-bold py-2 px-4 rounded-full">
+            <Link
+              href="/contact"
+              className="flex bg-white hover:bg-indigo-600 hover:text-white text-[#0a2540] text-sm font-bold py-2 px-4 rounded-full"
+            >
               Contactează-ne
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +54,7 @@ export default function Hero() {
                   clipRule="evenodd"
                 />
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </div>

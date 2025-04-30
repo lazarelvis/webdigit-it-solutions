@@ -1,3 +1,5 @@
+"use client";
+
 import Hero from "./components/Hero";
 import LogoClouds from "./components/LogoClouds";
 import FeaturesSection from "./components/StickyScroll/sticky-scroll-reveal-demo";
@@ -7,12 +9,20 @@ import Stats from "./components/Stats";
 import Support from "./components/Support";
 import Backgroundgradient from "./components/Background-gradient";
 import { Poppins } from "next/font/google";
+import React, { useRef } from "react";
+
 const popins = Poppins({
   subsets: ["latin"],
   weight: "500",
 });
 
 export default function Background() {
+  const targetRef = useRef(null);
+
+  const scrollToTarget = () => {
+    targetRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div
       className={`whole-body-content webdigit ${popins.className} font-semibold`}
@@ -26,7 +36,7 @@ export default function Background() {
         var gradient = new Gradient(); gradient.initGradient("#canvas");
       </script> */}
       <Backgroundgradient />
-      <Hero />
+      <Hero onClick={scrollToTarget} />
       <div className="LogoClouds">
         <LogoClouds />
       </div>
@@ -43,7 +53,7 @@ export default function Background() {
         <Stats />
       </div>
       <div className="Support">
-        <Support />
+        <Support ref={targetRef} />
       </div>
     </div>
   );
