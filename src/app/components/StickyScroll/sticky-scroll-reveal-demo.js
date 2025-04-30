@@ -13,38 +13,38 @@ export default function FeaturesSection() {
     {
       title: "Site prezentare profesional",
       description:
-        "Cream site-uri de prezentare cu de design responsive, optimizate SEO si usor de administrat..",
+        "Creăm site-uri de prezentare cu de design responsive, optimizate SEO și ușor de administrat.",
       icon: <IconWorldWww />,
     },
     {
       title: "Design grafic",
       description:
-        "Iti cream designul pentru logo-uri, bannere web si alte elemente grafice, totul fara alte costuri suplimentare.",
+        "Iți creăm designul pentru logo-uri, bannere web și alte elemente grafice, totul fară alte costuri suplimentare.",
       icon: <IconPhotoSquareRounded />,
     },
     {
-      title: "Domeniu si gazduire",
+      title: "Domeniu și găzduire",
       description:
-        "Oferim pachete de gazduire pentru site-ul sau magazinul tau online cu domeniu inclus.",
+        "Oferim pachete de găzduire pentru site-ul sau magazinul tău online cu domeniu inclus.",
       icon: <IconServer2 />,
     },
 
     {
-      title: "Magazin online la chei",
+      title: "Magazin online la cheie",
       description:
-        "Realizam magazine online la cheie in platformele WordPress.",
+        "Realizăm magazine online la cheie în platformele WordPress.",
       icon: <IconBuildingStore />,
     },
 
     {
       title: "Cost redus",
-      description: "Un cost redus pentru o administrare luna sau anuala",
+      description: "Un cost redus pentru o administrare lunară sau anuală.",
       icon: <IconCurrencyDollar />,
     },
     {
-      title: "24/7 Suport clienti",
+      title: "24/7 Suport clienți",
       description:
-        "Avem mereu o persoana pregatita pentru nevoile dumneavoastra.",
+        "Avem mereu o persoană pregătită pentru nevoile dumneavoastră.",
       icon: <IconHelp />,
     },
   ];

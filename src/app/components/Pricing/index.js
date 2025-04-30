@@ -9,9 +9,9 @@ const tiers = [
     description:
       "Oferim o consultanta gratuita pentru fiecare proiect in parte.",
     features: [
-      "Tehnologii necesare pentru realizarea proiectului",
-      "Exemple design potrivit pentru cerintele businessului",
-      "Aproximare durata de executie pentru proiectul ales",
+      "Oferim o consultanță gratuită pentru fiecare proiect în parte.",
+      "Exemple design potrivit pentru cerințele businessului",
+      "Aproximare durată de execuție pentru proiectul ales",
     ],
     featured: false,
   },
@@ -20,16 +20,16 @@ const tiers = [
     id: "tier-enterprise",
     href: "/contact",
     priceMonthly: "499 RON",
-    description: "Dedicated support and infrastructure for your company.",
+    description: "Pachet complet pentru website",
     features: [
       "Design responsive",
-      "Adaugare continut",
-      "Creare casuta e-mail la cerere",
+      "Adăugare conținut",
+      "Creare căsuță e-mail la cerere",
       "Pachet design logo standard",
-      "Conectare retele sociale",
+      "Conectare rețele sociale",
       "Formular contact",
-      "Numar pagini 1-3",
-      "Durata executie 7-10 zile",
+      "Număr pagini 1-3",
+      "Durată execuție 7-10 zile",
     ],
     featured: true,
   },
@@ -64,7 +64,7 @@ export default function Pricing() {
       </div>
       <p className="mx-auto mt-6 max-w-2xl text-center text-base font-medium text-pretty text-gray-600 sm:text-xl/8">
         Alege pachetul care ți se potrivește. În funcție de nevoile tale îți
-        putem face o oferta personalizată.
+        putem face o ofertă personalizată.
       </p>
       <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2">
         {tiers.map((tier, tierIdx) => (
@@ -160,7 +160,7 @@ export default function Pricing() {
                 "mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10"
               )}
             >
-              Cere o oferta
+              Cere o ofertă
             </a>
           </div>
         ))}

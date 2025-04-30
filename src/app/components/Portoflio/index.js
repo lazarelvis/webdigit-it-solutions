@@ -10,7 +10,7 @@ export default function Portfolio() {
           realizate
         </span>
         <p className="text-base text-slate-500 font-normal text-center max-w-2xl mx-auto my-4 normal-case">
-          Cateva dintre proiectele realizate construite pe platforma React si
+          Câteva dintre proiectele realizate construite pe platforma React și
           altele.
         </p>
       </h2>

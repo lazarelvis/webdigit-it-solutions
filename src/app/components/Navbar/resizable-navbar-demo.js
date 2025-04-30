@@ -16,7 +16,7 @@ import { usePathname } from "next/navigation";
 export default function NavbarDemo() {
   const navItems = [
     {
-      name: "Acasa",
+      name: "Acasă",
       link: "/",
     },
     {
@@ -51,7 +51,7 @@ export default function NavbarDemo() {
               Logare
             </NavbarButton>
             <NavbarButton href="/contact" variant="primary">
-              Cere oferta
+              Cere ofertă
             </NavbarButton>
           </div>
         </NavBody>
@@ -94,7 +94,7 @@ export default function NavbarDemo() {
                 variant="primary"
                 className="w-full"
               >
-                Cere Oferta
+                Cere Ofertă
               </NavbarButton>
             </div>
           </MobileNavMenu>

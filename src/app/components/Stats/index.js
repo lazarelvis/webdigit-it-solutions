@@ -1,7 +1,7 @@
 const stats = [
   { id: 1, name: "Website-uri de prezentare", value: "10+" },
   { id: 2, name: "Proiecte realizate", value: "20+" },
-  { id: 3, name: "Prezenta online", value: "+100–500%" },
+  { id: 3, name: "Prezență online", value: "+100–500%" },
 ];
 
 export default function Stats() {

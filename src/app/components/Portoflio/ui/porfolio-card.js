@@ -6,9 +6,9 @@ export default function PortfolioCard() {
     {
       title: "Gaming Website",
       description1:
-        "Un website in care poti sa te joci multiple jocuri realizate in Unity si ai posibilitea sa intri in competitie cu alti jucatori.",
+        "Un website în care poți să te joci multiple jocuri realizate în Unity și ai posibilitea să intri în competiție cu alti jucători.",
       description2:
-        "Aplicatia a fost realizata folosind libraria React, Unity, Nodejs, Javascript si MongoDB pentru stocarea datelor.",
+        "Aplicația a fost realizată folosind librăria React, Unity, Nodejs, Javascript și MongoDB pentru stocarea datelor.",
       imageSource1: "/gaming-website.png",
       imageSource2: "/gaming-website-games.png",
       alt: "Website Gaming",
@@ -17,22 +17,22 @@ export default function PortfolioCard() {
     {
       title: "Restaurant",
       description1:
-        "Restaurant website de prezentare cu meniu cu diferite functionalitati",
+        "Restaurant website de prezentare cu meniu și diferite funcționalități",
       description2:
-        "S-a folosit aplicatia ReactJS, Javascript, NodeJS si MongoDB.",
+        "S-a folosit aplicația ReactJS, Javascript, NodeJS și MongoDB.",
       imageSource1: "/grilli-restaurant.png",
       imageSource2: "/grilli-restaurant-menu.png",
-      alt: "Shop de chitari",
+      alt: "Restaurant site prezentare",
       linkPreview: "https://grili-restaurant.netlify.app/",
     },
     {
       title: "Site prezentare / Portfoliu",
       description1:
-        "O aplicatie de prezentare a portofoliului, experientei si proiectului la care o persoana a lucrat.",
+        "O aplicație de prezentare a portofoliului, experienței și proiectului la care o persoană a lucrat.",
       description2: "Pentru realizare s-a folosit framework-ul Next.js",
       imageSource1: "/portfolio-website.png",
       imageSource2: "/portfolio-website-2.png",
-      alt: "portfolio website",
+      alt: "Site prezentare / Portfoliu website",
       linkPreview: "https://lazarelvis.ro/",
     },
   ];

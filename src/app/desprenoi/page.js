@@ -9,8 +9,8 @@ export default function DespreNoi() {
       content: (
         <div>
           <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-gray-800">
-            Am construit și lansat Webdigit ca o platforma care ajuta la crearea
-            unei prezente online.
+            Am construit și lansat Webdigit ca o platformă care ajută la crearea
+            unei prezențe online.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <img
@@ -50,8 +50,8 @@ export default function DespreNoi() {
       content: (
         <div>
           <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-gray-800">
-            Crearea de multiple website-uri, shop-uri, website-uri wordpress and
-            invatarea de noi tehnologii.
+            Crearea de multiple website-uri, shop-uri, website-uri wordpress și
+            învățarea de noi tehnologii.
           </p>
           <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-gray-800">
             Iată câteva exemple de modele frumoase pe care le-am construit.

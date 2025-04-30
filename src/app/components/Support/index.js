@@ -32,11 +32,11 @@ export default function Support({ ref }) {
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
           <div className="max-w-xl lg:max-w-lg">
             <h2 className="text-4xl font-semibold tracking-tight text-[#0a2540]">
-              Consiliere rapida pentru pachetul de pornire
+              Consiliere rapidă pentru pachetul de pornire
             </h2>
             <p className="mt-4 text-lg text-[#425466]">
-              Intr-o discutie rapida iti poti afla cele mai bune decizii pentru
-              prezenta ta online
+              Într-o discuție rapidă îți poți afla cele mai bune decizii pentru
+              prezența ta online
             </p>
             <form onSubmit={handleSubmit(onSubmit)} method="POST">
               <div className="mt-6 flex max-w-md gap-x-4">
@@ -110,7 +110,7 @@ export default function Support({ ref }) {
                 </svg>
               </div>
               <dt className="mt-4 text-base font-semibold text-[#0a2540]">
-                Contribuim la cresterea vizibilitatii in domeniul online
+                Contribuim la creșterea vizibilității în domeniul online
               </dt>
             </div>
           </dl>
