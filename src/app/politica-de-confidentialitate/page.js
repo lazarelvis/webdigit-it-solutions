@@ -31,6 +31,7 @@ export default function PoliticaDeConfidentialitate() {
         "Dacă ai o nemulțumire despre modul în care gestionăm prelucrarea datelor tale cu caracter personal, ori modul în care gestionăm o reclamație cu privire la prleucrarea acestor date, ai dreptul de a depune o reclamație la Autoritatea pentru Protecția Datelor cu Caracter Personal.",
     },
   ];
+  // return section
   return (
     <div className="bg-gray-50 min-h-screen">
       <div className="max-w-4xl mx-auto px-4 py-16">
