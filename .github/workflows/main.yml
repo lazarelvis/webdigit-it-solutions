@@ -16,12 +16,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '22' # Specify your required Node.js version
-          
-      - name: Install dependencies
-        run: npm install # Or yarn install
-
-      - name: Build app (if needed)
-        run: npm run build # Or your build command
         
       - name: Deploy to server
         uses: appleboy/ssh-action@v1 #Example of an SSH action.
@@ -30,9 +24,11 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            export NVM_DIR=~/.nvm #helps the terminal fix the node path installed by nvm
+            source ~/.nvm/nvm.sh #helps the terminal fix the node path installed by nvm
             cd /home/ubuntu/webdigit-it-solutions
             git pull origin master
-            pwd
             npm install
             npm run build
             pm2 restart webdigit-it-solutions
+  
