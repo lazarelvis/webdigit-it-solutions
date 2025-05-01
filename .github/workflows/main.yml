@@ -16,7 +16,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '22' # Specify your required Node.js version
+          
+      - name: Install dependencies
+        run: npm install # Or yarn install
 
+      - name: Build app (if needed)
+        run: npm run build # Or your build command
+        
       - name: Deploy to server
         uses: appleboy/ssh-action@v1 #Example of an SSH action.
         with:
