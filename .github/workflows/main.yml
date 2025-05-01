@@ -30,7 +30,7 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd ~/webdigit-it-solutions
+            cd /home/ubuntu/webdigit-it-solutions
             git pull origin master
             npm install
             npm run build
