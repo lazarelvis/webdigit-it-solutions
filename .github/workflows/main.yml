@@ -32,6 +32,7 @@ jobs:
           script: |
             cd /home/ubuntu/webdigit-it-solutions
             git pull origin master
+            pwd
             npm install
             npm run build
             pm2 restart webdigit-it-solutions
