@@ -40,7 +40,10 @@ export default function PortfolioCard() {
   return (
     <div className="relative z-10">
       {content.map((item, index) => (
-        <div className="py-6 lg:py-10 flex flex-col lg:flex-row  my-20">
+        <div
+          key={index}
+          className="py-6 lg:py-10 flex flex-col lg:flex-row  my-20"
+        >
           <div className="pr-4">
             <h1 className="font-bold text-2xl text-slate-800">{item.title}</h1>
             <div className="text-sm text-slate-600 max-w-xs mt-4 leading-6">

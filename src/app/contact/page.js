@@ -35,7 +35,6 @@ export default function Contact() {
         [target.name]: target.value,
       },
     }));
-  console.log("!agreed:", agreed);
 
   const onSubmit = async (data) => {
     if (agreed) {
