@@ -13,6 +13,8 @@ pnpm dev
 # or
 bun dev
 ```
+node -v 22.14.0
+npm -v 10.9.2
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

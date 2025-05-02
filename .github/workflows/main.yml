@@ -1,0 +1,34 @@
+name: Deploy Node.js App
+on:
+  push:
+    branches:
+      - master # Or your deployment branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest # Or your desired runner OS
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22' # Specify your required Node.js version
+        
+      - name: Deploy to server
+        uses: appleboy/ssh-action@v1 #Example of an SSH action.
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            export NVM_DIR=~/.nvm #helps the terminal fix the node path installed by nvm
+            source ~/.nvm/nvm.sh #helps the terminal fix the node path installed by nvm
+            cd /home/ubuntu/webdigit-it-solutions
+            git pull origin master
+            npm install
+            npm run build
+            pm2 restart webdigit-it-solutions
+  
