@@ -70,8 +70,8 @@ export default function Hero({ onClick }) {
 
         <Image
           style={{ transform: "translate(-100px, -80px)" }}
-          src="/webdigit.svg"
-          alt="Picture of the author"
+          src="/webdigit.ro.png"
+          alt="Webdigit.ro tehnologie de ultima generatie"
           width={900}
           height={900}
         />
