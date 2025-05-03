@@ -85,7 +85,7 @@ export default function Pricing() {
             <h3
               id={tier.id}
               className={classNames(
-                tier.featured ? "text-indigo-600" : "text-indigo-600",
+                tier.featured ? "text-white" : "text-indigo-600",
                 "text-base/7 font-semibold"
               )}
             >

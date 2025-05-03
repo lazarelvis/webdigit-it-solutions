@@ -71,6 +71,7 @@ export default function Hero({ onClick }) {
         <Image
           style={{ transform: "translate(-100px, -80px)" }}
           src="/webdigit.ro.png"
+          loading="eager"
           alt="Webdigit.ro tehnologie de ultima generatie"
           width={900}
           height={900}

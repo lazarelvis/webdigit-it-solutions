@@ -32,13 +32,21 @@ const items = [
     name: "Instagram",
     icon: FaInstagram,
     link: "https://www.instagram.com/webdigit.ro/",
+    label: "Visit WebDigit.ro on Instagram",
   },
   {
     name: "Tiktok",
     icon: FaTiktok,
     link: "https://www.tiktok.com/@webdigit.ro",
+    label: "Visit WebDigit.ro on Tiktok",
   },
-  { name: "Github", icon: FaGithub, link: "https://github.com/lazarelvis" },
+  {
+    name: "Github",
+    icon: FaGithub,
+    link: "https://github.com/lazarelvis",
+
+    label: "Visit WebDigit.ro on Github",
+  },
 ];
 
 export default function Footer() {
@@ -64,7 +72,7 @@ export default function Footer() {
         <div className="flex justify-between sm:w-[200px] pt-4 text-2xl">
           {items.map((x, index) => {
             return (
-              <Link key={index} href={x.link}>
+              <Link key={index} href={x.link} aria-label={x.label}>
                 <x.icon className="hover:text-white" />
               </Link>
             );

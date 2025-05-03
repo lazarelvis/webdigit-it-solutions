@@ -69,7 +69,7 @@ export default function Support({ ref }) {
             </form>
             <ToastContainer position="bottom-right" theme="light" />
           </div>
-          <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
             <div className="flex flex-col items-start">
               <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10 text-[#0a2540]">
                 <svg
@@ -87,10 +87,10 @@ export default function Support({ ref }) {
                   />
                 </svg>
               </div>
-              <dt className="mt-4 text-base font-semibold text-[#0a2540]">
+              <p className="mt-4 text-base font-semibold text-[#0a2540]">
                 Optimizare SEO pentru a vă ajuta să apăreți mai sus în căutările
                 Google
-              </dt>
+              </p>
             </div>
             <div className="flex flex-col items-start">
               <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10 text-[#0a2540]">
@@ -109,11 +109,11 @@ export default function Support({ ref }) {
                   />
                 </svg>
               </div>
-              <dt className="mt-4 text-base font-semibold text-[#0a2540]">
+              <p className="mt-4 text-base font-semibold text-[#0a2540]">
                 Contribuim la creșterea vizibilității în domeniul online
-              </dt>
+              </p>
             </div>
-          </dl>
+          </div>
         </div>
       </div>
       {/* <div

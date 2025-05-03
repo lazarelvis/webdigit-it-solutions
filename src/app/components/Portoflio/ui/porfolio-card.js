@@ -66,24 +66,22 @@ export default function PortfolioCard() {
             </div>
           </div>
           <div className="flex flex-col sm:flex-row mt-10 lg:mt-0 space-y-6 sm:space-y-0 sm:space-x-6 overflow-x-auto flex-1">
-            <div className="relative w-full h-50 sm:h-72 lg:h-[80%]  sm:w-[50%] lg:w-[45%] rounded-xl border border-gray-100">
+            <div className="relative w-full h-50 sm:h-72 lg:h-[80%]  sm:w-[50%] lg:w-[55%] rounded-xl border border-gray-100">
               <Image
-                className={styles.imgstyle}
                 src={item.imageSource1}
                 alt={item.alt}
-                width={1000}
-                height={1000}
+                fill
+                style={{ objectFit: "cover" }}
                 priority
               />
             </div>
             {/* h-50 is the hight of the card */}
-            <div className="relative w-full h-50 sm:h-72 lg:h-[80%]  sm:w-[50%] lg:w-[45%] rounded-xl border border-gray-100 ">
+            <div className="relative w-full h-50 sm:h-72 lg:h-[80%]  sm:w-[50%] lg:w-[55%]  rounded-xl border border-gray-100 ">
               <Image
-                className={styles.imgstyle}
                 src={item.imageSource2}
                 alt={item.alt}
-                width={1000}
-                height={1000}
+                fill
+                style={{ objectFit: "cover" }}
                 priority
               />
             </div>
