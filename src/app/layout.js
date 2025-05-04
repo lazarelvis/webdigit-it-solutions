@@ -11,7 +11,7 @@ const popins = Poppins({
 
 export const metadata = {
   title:
-    "WebDigit: Creare Site-uri Profesionale pentru Afaceri Locale în Brașov",
+    "Webdigit: Creare Site-uri Profesionale pentru Afaceri Locale în Brașov",
   description:
     "Creăm site-uri web profesionale pentru afaceri locale din Brașov. Contactează-ne pentru o prezență online de succes.",
 };
