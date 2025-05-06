@@ -12,7 +12,7 @@ export default function LogoClouds() {
             alt="react js logo"
             width={158}
             height={48}
-            priority={false}
+            priority
           />
           <Image
             className="col-span-2 max-h-18 w-full object-contain lg:col-span-1"
@@ -20,7 +20,7 @@ export default function LogoClouds() {
             alt="next js logo"
             width={200}
             height={70}
-            priority={false}
+            priority
           />
           <Image
             className="col-span-2 max-h-18 w-full object-contain lg:col-span-1"
@@ -28,7 +28,7 @@ export default function LogoClouds() {
             alt="wordpress logo"
             width={158}
             height={48}
-            priority={false}
+            priority
           />
 
           <Image
@@ -37,7 +37,7 @@ export default function LogoClouds() {
             alt="nodejs logo"
             width={158}
             height={48}
-            priority={false}
+            priority
           />
 
           <Image
@@ -46,7 +46,7 @@ export default function LogoClouds() {
             alt="amazon web services aws logo"
             width={158}
             height={48}
-            priority={false}
+            priority
           />
         </div>
       </div>
