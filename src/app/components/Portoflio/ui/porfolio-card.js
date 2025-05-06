@@ -72,7 +72,7 @@ export default function PortfolioCard() {
                 alt={item.alt}
                 fill
                 style={{ objectFit: "cover" }}
-                priority
+                priority={false}
               />
             </div>
             {/* h-50 is the hight of the card */}
@@ -82,7 +82,7 @@ export default function PortfolioCard() {
                 alt={item.alt}
                 fill
                 style={{ objectFit: "cover" }}
-                priority
+                priority={false}
               />
             </div>
           </div>
