@@ -20,6 +20,10 @@ export default function NavbarDemo() {
       link: "/",
     },
     {
+      name: "Blog",
+      link: "/blog",
+    },
+    {
       name: "Despre Noi",
       link: "/desprenoi",
     },
