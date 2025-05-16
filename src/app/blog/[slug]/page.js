@@ -7,15 +7,24 @@ import Link from "next/link";
 import Image from "next/image";
 import { IconArrowNarrowLeft } from "@tabler/icons-react";
 import { IconArrowLeft } from "@tabler/icons-react";
+import { notFound } from "next/navigation";
 // import { getPostContent } from "../../Lib/markdown";
 
 function getPostContent(slug) {
   const folder = "content-mdx-page/";
   const file = folder + `${slug}.md`;
-  const content = fs.readFileSync(file, "utf8");
+  try {
+    const content = fs.readFileSync(file, "utf8");
 
-  const matterResult = matter(content);
-  return matterResult;
+    const matterResult = matter(content);
+    return matterResult;
+  } catch (error) {
+    if (error.code === "ENOENT") {
+      notFound(); // Trigger Next.js 404 page
+    } else {
+      throw error; // re-throw other unexpected errors
+    }
+  }
 }
 
 // Static generation for routes
@@ -26,8 +35,9 @@ export const generateStaticParams = async () => {
 
 // Dynamic metadata: name of title or page
 export async function generateMetadata({ params }) {
-  const id = await params;
-  const data = await getPostContent(id.slug);
+  const { slug } = await params;
+
+  const data = getPostContent(slug); // safe now
 
   return {
     title: `Webdigit ${data.data.title ? data.data.title : ""}`,

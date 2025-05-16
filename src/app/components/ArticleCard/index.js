@@ -16,8 +16,6 @@ const PlayIcon = () => (
 
 const ArticleCard = ({
   imageUrl,
-  overlayTitle,
-  logoText = "Aceternity",
   authorName,
   authorAvatarUrl,
   title,

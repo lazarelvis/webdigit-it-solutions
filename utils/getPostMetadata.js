@@ -13,7 +13,6 @@ export default function getPostMetadata(basePath) {
 
     return {
       imageUrl: matterResult.data.imageUrl,
-      overlayTitle: matterResult.data.overlayTitle,
       logoText: matterResult.data.logoText,
       authorName: matterResult.data.authorName,
       authorAvatarUrl: matterResult.data.authorAvatarUrl,
