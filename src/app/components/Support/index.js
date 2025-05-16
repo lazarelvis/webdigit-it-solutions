@@ -17,8 +17,6 @@ export default function Support({ ref }) {
       await sendContactForm(data);
       toast.info("In cel mai scurt timp vei fi contact");
     } catch (error) {
-      console.log("error.message:", error.message);
-
       toast.error("Eroare la trimiterea mesajului");
     }
     reset();
