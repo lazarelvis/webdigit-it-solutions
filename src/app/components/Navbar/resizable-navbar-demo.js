@@ -88,6 +88,7 @@ export default function NavbarDemo() {
             <div className="flex w-full flex-col gap-4">
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
+                href="/logare"
                 variant="primary"
                 className="w-full"
               >
@@ -97,6 +98,7 @@ export default function NavbarDemo() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
+                href="/contact"
               >
                 Cere Ofertă
               </NavbarButton>

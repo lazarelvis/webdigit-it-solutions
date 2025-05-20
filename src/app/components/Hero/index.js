@@ -20,7 +20,7 @@ export default function Hero({ onClick }) {
           <div className="heroButtons flex py-6 sm:py-10">
             <button
               onClick={onClick}
-              className="flex bg-[#0a2540] hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded-full cursor-pointer"
+              className="flex bg-[#0a2540] hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded-full cursor-pointer "
             >
               Primește o ofertă
               <svg
@@ -39,9 +39,9 @@ export default function Hero({ onClick }) {
 
             <Link
               href="/contact"
-              className="flex bg-white hover:bg-indigo-600 hover:text-white text-[#0a2540] text-sm font-bold py-2 px-4 rounded-full"
+              className="flex bg-white hover:bg-indigo-600 hover:text-white text-[#0a2540] text-sm font-bold py-2 px-4 rounded-full "
             >
-              Contactează-ne
+              Contact
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
