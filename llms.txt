@@ -1,0 +1,17 @@
+# Guidance for Large Language Models
+User-agent: *
+Allow: /
+
+# https://webdigit.ro/llms.txt
+
+# Useful Pages on WebDigit
+
+- [Impactful Online Presence](https://webdigit.ro/): Transforming your ideas into impactful online presence with Webdigit.
+- [Web Tools and SEO Tips](https://webdigit.ro/blog): Explore essential web tools and SEO tips for 2025.
+- [Contact WebDigit](https://webdigit.ro/contact): Contact WebDigit for inquiries or offers anytime.
+- [Webdigit Journey Overview](https://webdigit.ro/desprenoi): A journey of building Webdigit and online presence.
+- [Admin Login Page](https://webdigit.ro/logare): Admin login page for Webdigit with social media links.
+- [Privacy Policy Overview](https://webdigit.ro/politica-de-confidentialitate): Comprehensive privacy policy outlining data handling practices.
+- [Webdigit Terms and Conditions](https://webdigit.ro/termeni-si-conditii): Comprehensive terms and conditions for using Webdigit's services.
+- [Top Web Tools 2025](https://webdigit.ro/blog/tooluri-web-2025): Explore top web tools for efficiency and security in 2025.
+- [Top SEO Tips 2025](https://webdigit.ro/blog/top-3-sfaturi-seo-2025): Essential SEO tips for improving website visibility in 2025.
