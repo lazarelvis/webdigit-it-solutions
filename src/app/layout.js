@@ -3,7 +3,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./globals.css";
 import Navbar from "./components/Navbar/resizable-navbar-demo";
-
+import Head from "next/head";
+import Script from "next/script";
 const popins = Poppins({
   subsets: ["latin"],
   weight: "500",
@@ -19,6 +20,22 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <Script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=G-4E2WHDJLZ9`}
+          strategy="afterInteractive"
+        ></Script>
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-4E2WHDJLZ9');
+          `}
+        </Script>
+      </Head>
       <body>
         <div
           className={`whole-body-content webdigit ${popins.className} font-semibold`}
