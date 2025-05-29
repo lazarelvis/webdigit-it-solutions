@@ -20,7 +20,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <Script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=G-4E2WHDJLZ9`}
@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-4E2WHDJLZ9');
           `}
         </Script>
-      </Head>
+      </head>
       <body>
         <div
           className={`whole-body-content webdigit ${popins.className} font-semibold`}
